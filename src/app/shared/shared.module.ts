@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputComponent } from './input/input.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -8,8 +9,12 @@ import { InputComponent } from './input/input.component';
   declarations: [
     InputComponent
   ],
+  exports: [
+    InputComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
