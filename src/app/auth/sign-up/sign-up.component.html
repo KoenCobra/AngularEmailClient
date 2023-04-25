@@ -2,9 +2,19 @@
 <form class="ui form" [formGroup]="authForm">
   <app-input inputType="text" label="Username" [control]="authForm.controls.username"></app-input>
   <app-input inputType="password" label="Password" [control]="authForm.controls.password"></app-input>
-  <app-input inputType="password" label="Password confirmation" [control]="authForm.controls.passwordConfirmation"></app-input>
+  <app-input inputType="password" label="Password confirmation"
+             [control]="authForm.controls.passwordConfirmation"></app-input>
 
-  <button class="button ui submit primary" type="submit">Sign up</button>
+  <div *ngIf="authForm.controls.password?.touched && authForm.controls.passwordConfirmation.touched
+&& authForm.errors">
 
-  {{authForm.errors |json}}
+    <div class="ui red basic label">
+      <p *ngIf="authForm.errors?.['passwordsDontMatch']">
+        Passwords don't match
+      </p>
+    </div>
+  </div>
+  <div>
+    <button class="button ui submit primary" type="submit">Sign up</button>
+  </div>
 </form>

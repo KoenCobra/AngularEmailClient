@@ -41,7 +41,5 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit() {}
-
-  protected readonly FormControl = FormControl;
 }
 
