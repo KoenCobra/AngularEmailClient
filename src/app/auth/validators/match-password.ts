@@ -1,7 +1,10 @@
 import {AbstractControl, FormGroup, ValidationErrors, Validator} from "@angular/forms";
+import {Injectable} from "@angular/core";
 
+@Injectable({providedIn: 'root'})
 export class MatchPassword implements Validator {
-  validate(formGroup: FormGroup): ValidationErrors | null {
+  validate(control: AbstractControl): ValidationErrors | null {
+    const formGroup = control as FormGroup;
     const {password, passwordConfirmation} = formGroup.value;
 
     if (password === passwordConfirmation) {
@@ -11,3 +14,4 @@ export class MatchPassword implements Validator {
     }
   }
 }
+
