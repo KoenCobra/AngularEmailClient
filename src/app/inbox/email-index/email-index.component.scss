@@ -1,0 +1,17 @@
+.item a {
+  color: black;
+}
+
+a.active {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: lighten(lightgrey, 15%) !important;
+  padding: 0.5rem;
+
+  &::before {
+    content: '>';
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}

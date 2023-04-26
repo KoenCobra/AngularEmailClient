@@ -1,3 +1,18 @@
+.item a {
+  color: black;
+}
 
+a.active {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f9f9f9 !important;
+  padding: 0.5rem;
+}
+a.active::before {
+  content: ">";
+  font-size: 20px;
+  margin-right: 10px;
+}
 
 /*# sourceMappingURL=email-index.component.css.map */
