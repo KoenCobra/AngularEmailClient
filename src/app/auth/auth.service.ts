@@ -16,12 +16,12 @@ interface SignupResponse {
   username: string
 }
 
-interface SignedInResponse{
-  authenticated:boolean;
-  username:string;
+interface SignedInResponse {
+  authenticated: boolean;
+  username: string;
 }
 
-interface SignInCredentials{
+interface SignInCredentials {
   username?: string | null | undefined;
   password?: string | null | undefined;
 }
@@ -31,7 +31,7 @@ interface SignInCredentials{
 })
 export class AuthService {
   baseUrl = 'https://api.angular-email.com/';
-  signedIn$ = new BehaviorSubject(false);
+  signedIn$: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
   }
