@@ -21,6 +21,11 @@ interface SignedInResponse{
   username:string;
 }
 
+interface SignInCredentials{
+  username?: string | null | undefined;
+  password?: string | null | undefined;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -49,6 +54,14 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}auth/signout`, {}).pipe(
       tap(() => {
         this.signedIn$.next(false);
+      })
+    );
+  }
+
+  signIn(credentials: SignInCredentials) {
+    return this.http.post<any>(`${this.baseUrl}auth/signin`, credentials).pipe(
+      tap(() => {
+        this.signedIn$.next(true);
       })
     );
   }
