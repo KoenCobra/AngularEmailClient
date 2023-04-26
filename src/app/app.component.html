@@ -7,8 +7,8 @@
         <a routerLink="/signout" routerLinkActive="active" class="ui item">Sign out</a>
       </ng-container>
       <ng-container *ngIf="!signedIn">
-        <a routerLink="/" routerLinkActive="active" class="ui item">Sign in</a>
-        <a routerLink="/signup" routerLinkActive="active" class="ui item">Sign up</a>
+        <a routerLink="/" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="ui item">Sign in</a>
+        <a routerLink="signup" routerLinkActive="active" class="ui item">Sign up</a>
       </ng-container>
     </div>
   </div>
