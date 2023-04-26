@@ -7,10 +7,15 @@
 
   <div *ngIf="authForm.controls.password?.touched && authForm.controls.passwordConfirmation.touched
 && authForm.errors">
-
     <div class="ui red basic label">
       <p *ngIf="authForm.errors?.['passwordsDontMatch']">
         Passwords don't match
+      </p>
+      <p *ngIf="authForm.errors?.['noConnection']">
+        No internet connection
+      </p>
+      <p *ngIf="authForm.errors?.['unKnowError']">
+        Failed to sign up
       </p>
     </div>
   </div>
