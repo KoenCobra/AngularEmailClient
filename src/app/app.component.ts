@@ -12,6 +12,10 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.authService.checkAuth().subscribe(()=>{
+
+    });
+
     this.authService.signedIn$.subscribe(((signedIn)=>{
       this.signedIn = signedIn;
     }))
