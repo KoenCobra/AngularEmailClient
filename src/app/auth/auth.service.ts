@@ -7,13 +7,18 @@ interface UsernameAvailableResponse {
 }
 
 interface Credentials {
-  username?: string | null | undefined,
-  password?: string | null | undefined,
-  passwordConfirmation?: string | null | undefined
+  username?: string | null | undefined;
+  password?: string | null | undefined;
+  passwordConfirmation?: string | null | undefined;
 }
 
 interface SignupResponse {
   username: string
+}
+
+interface SignedInResponse{
+  authenticated:boolean;
+  username:string;
 }
 
 @Injectable({
@@ -41,10 +46,10 @@ export class AuthService {
   }
 
   checkAuth() {
-    return this.http.get(`${this.baseUrl}auth/signedin`)
+    return this.http.get<SignedInResponse>(`${this.baseUrl}auth/signedin`)
       .pipe(
-        tap(response => {
-          console.log(response);
+        tap(({authenticated}) => {
+          this.signedIn$.next(authenticated);
         })
       )
   }
