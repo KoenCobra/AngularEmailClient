@@ -45,6 +45,14 @@ export class AuthService {
     );
   }
 
+  signOut() {
+    return this.http.post<any>(`${this.baseUrl}auth/signout`, {}).pipe(
+      tap(() => {
+        this.signedIn$.next(false);
+      })
+    );
+  }
+
   checkAuth() {
     return this.http.get<SignedInResponse>(`${this.baseUrl}auth/signedin`)
       .pipe(

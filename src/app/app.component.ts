@@ -7,14 +7,24 @@ import {BehaviorSubject} from "rxjs";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  signedIn$: BehaviorSubject<boolean>;
+export class AppComponent implements OnInit {
+  signedIn = false;
 
   constructor(private authService: AuthService) {
-    this.signedIn$ = this.authService.signedIn$;
   }
 
-  ngOnInit() {
-    this.authService.checkAuth().subscribe(() => {});
+  ngOnInit(): void {
+    this.authService.checkAuth().subscribe(() => {
+    });
+
+    this.authService.signedIn$.subscribe(((signedIn) => {
+      this.signedIn = signedIn;
+    }))
+  }
+
+
+  signOut() {
+    this.authService.checkAuth().subscribe(() => {
+    });
   }
 }

@@ -12,12 +12,12 @@ export class AuthHttpInterceptor implements HttpInterceptor {
       withCredentials: true
     })
     return next.handle(modifiedReq)
-      .pipe(
-        //filter is basically replacing an if statement
-        filter(value => value.type === HttpEventType.Sent),
-        tap(value => {
-          console.log('request was sent to server')
-        })
-      );
+      // .pipe(
+      //   filter is basically replacing an if statement
+      //   filter(value => value.type === HttpEventType.Sent),
+      //   tap(value => {
+      //     console.log('request was sent to server')
+      //   })
+      // );
   }
 }
