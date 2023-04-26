@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {filter, Observable, tap} from 'rxjs';
 
 @Injectable()
 export class AuthHttpInterceptor implements HttpInterceptor {
@@ -11,6 +11,13 @@ export class AuthHttpInterceptor implements HttpInterceptor {
     const modifiedReq = req.clone({
       withCredentials: true
     })
-    return next.handle(modifiedReq);
+    return next.handle(modifiedReq)
+      .pipe(
+        //filter is basically replacing an if statement
+        filter(value => value.type === HttpEventType.Sent),
+        tap(value => {
+          console.log('request was sent to server')
+        })
+      );
   }
 }
