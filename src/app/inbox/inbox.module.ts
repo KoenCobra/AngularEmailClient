@@ -9,6 +9,7 @@ import { EmailIndexComponent } from './email-index/email-index.component';
 import { EmailShowComponent } from './email-show/email-show.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder
   imports: [
     CommonModule,
     InboxRoutingModule,
+    SharedModule
   ]
 })
 export class InboxModule { }
