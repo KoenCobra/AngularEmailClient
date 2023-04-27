@@ -1,11 +1,12 @@
 <form class="ui form" [formGroup]="emailForm">
-  <app-input [control]="emailForm.controls.to" inputType="email" label="To">
+  <app-input controlType="input" [control]="emailForm.controls.to" inputType="email" label="To">
   </app-input>
 
-  <app-input [control]="emailForm.controls.from" inputType="email" label="From">
+  <app-input controlType="input" [control]="emailForm.controls.from" inputType="email" label="From">
   </app-input>
 
   <app-input
+    controlType="input"
     [control]="emailForm.controls.subject"
     inputType="text"
     label="Subject"
