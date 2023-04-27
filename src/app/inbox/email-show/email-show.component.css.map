@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"email-show.component.css"}
+{"version":3,"sourceRoot":"","sources":["email-show.component.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"email-show.component.css"}

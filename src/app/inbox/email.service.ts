@@ -26,4 +26,8 @@ export class EmailService {
   createEmail(email: Email){
     return this.http.post(`${this.baseUrl}emails`, email)
   }
+
+  replyEmail(email: Email){
+    return this.http.post(`${this.baseUrl}emails`, email)
+  }
 }
