@@ -11,6 +11,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder.component';
 import {SharedModule} from "../shared/shared.module";
 import { EmailFormComponent } from './email-form/email-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EmailFormComponent } from './email-form/email-form.component';
   imports: [
     CommonModule,
     InboxRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class InboxModule { }
