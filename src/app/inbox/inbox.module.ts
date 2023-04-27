@@ -10,6 +10,7 @@ import { EmailShowComponent } from './email-show/email-show.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EmailPlaceholderComponent } from './email-placeholder/email-placeholder.component';
 import {SharedModule} from "../shared/shared.module";
+import { EmailFormComponent } from './email-form/email-form.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {SharedModule} from "../shared/shared.module";
     EmailReplyComponent,
     EmailIndexComponent,
     EmailShowComponent,
-    EmailPlaceholderComponent
+    EmailPlaceholderComponent,
+    EmailFormComponent
   ],
   imports: [
     CommonModule,

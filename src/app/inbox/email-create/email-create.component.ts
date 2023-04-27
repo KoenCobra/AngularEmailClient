@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./email-create.component.scss']
 })
 export class EmailCreateComponent {
-
+  showModel: boolean = false;
 }
