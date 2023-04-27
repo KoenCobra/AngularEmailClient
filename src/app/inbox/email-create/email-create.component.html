@@ -1,10 +1,10 @@
-<button (click)="showModel = true" class="ui button inverted primary fluid">
+<button (click)="showModal = true" class="ui button inverted primary fluid">
   Compose
 </button>
 
-<app-modal (dismiss)="showModel = false" *ngIf="showModel">
+<app-modal  (dismiss)="showModal = false" *ngIf="showModal">
   <div modalTitle>
     Compose
   </div>
-  <app-email-form [email]="email"></app-email-form>
+  <app-email-form (createEmail)="createEmail($event)" [email]="email"></app-email-form>
 </app-modal>
